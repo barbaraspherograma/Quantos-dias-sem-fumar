@@ -3,31 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Dias</title>
+    <title>Processando...</title>
     <script>
-        function contarDias() {
-            // Data inicial: 23 de outubro de 2023
-            const dataInicio = new Date("2023-10-23");
-
+        // Função para calcular a diferença de dias
+        function calcularDias() {
+            // Data inicial: 23/10/2023
+            const dataInicio = new Date(2023, 9, 23); // Meses começam do 0 (outubro é o mês 9)
+            
             // Data atual
             const dataAtual = new Date();
 
-            // Calcular a diferença em milissegundos
+            // Calculando a diferença em milissegundos
             const diferenca = dataAtual - dataInicio;
 
-            // Converter a diferença para dias
+            // Convertendo a diferença para dias
             const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
 
-            // Exibir o número de dias na mensagem personalizada
-            document.getElementById("contador").textContent = `Fazem ${dias} dias que o Denior deixou de fumar (só às vezes), parabéns!!`;
-        }
+            // Atualizando o título da página com a frase completa
+            document.title = `Fazem ${dias} dias que o Denior deixou de fumar (só as vezes), parabéns!!`;
 
-        // Chamar a função assim que a página carregar
-        window.onload = contarDias;
+            // Exibindo a mensagem no corpo da página
+            document.getElementById("mensagem").innerText = `Fazem ${dias} dias que o Denior deixou de fumar (só as vezes), parabéns!!`;
+        }
     </script>
 </head>
-<body>
-    <h1>Contador de Dias</h1>
-    <p id="contador"></p>
+<body onload="calcularDias()">
+    <h1 id="mensagem"></h1>
 </body>
 </html>
