@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contador de Dias</title>
     <script>
-        // Função para calcular os dias desde 26/10/2023
-        function calcularDias() {
-            // Data de início
-            const dataInicio = new Date("2023-10-26");
-            
+        function contarDias() {
+            // Data inicial: 23 de outubro de 2023
+            const dataInicio = new Date("2023-10-23");
+
             // Data atual
             const dataAtual = new Date();
-            
-            // Calculando a diferença em milissegundos
-            const diff = dataAtual - dataInicio;
-            
-            // Convertendo de milissegundos para dias
-            const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
-            
-            // Atualizando o conteúdo do título
-            document.getElementById("titulo").innerText = `Fazem ${dias} dias que o Denior mente que não fuma mais`;
+
+            // Calcular a diferença em milissegundos
+            const diferenca = dataAtual - dataInicio;
+
+            // Converter a diferença para dias
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+
+            // Exibir o número de dias na mensagem personalizada
+            document.getElementById("contador").textContent = `Fazem ${dias} dias que o Denior deixou de fumar (só às vezes), parabéns!!`;
         }
-        
-        // Chamando a função assim que a página carregar
-        window.onload = calcularDias;
+
+        // Chamar a função assim que a página carregar
+        window.onload = contarDias;
     </script>
 </head>
 <body>
-    <h1 id="titulo"></h1>
+    <h1>Contador de Dias</h1>
+    <p id="contador"></p>
 </body>
 </html>
